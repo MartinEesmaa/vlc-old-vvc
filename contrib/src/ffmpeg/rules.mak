@@ -33,6 +33,8 @@ FFMPEGCONF = \
 	--disable-encoder=vorbis \
 	--disable-decoder=opus \
 	--enable-libgsm \
+	--enable-libvvdec \
+	--enable-libfdk-aac \
 	--disable-debug \
 	--disable-avdevice \
 	--disable-devices \
@@ -255,6 +257,7 @@ ifdef USE_FFMPEG
 	$(APPLY) $(SRC)/ffmpeg/0001-bring-back-XP-support.patch
 	$(APPLY) $(SRC)/ffmpeg/0001-avcodec-vp9-Do-not-destroy-uninitialized-mutexes-con.patch
 	$(APPLY) $(SRC)/ffmpeg/0001-dxva2_hevc-don-t-use-frames-as-reference-if-they-are.patch
+	$(APPLY) $(SRC)/ffmpeg/libvvdec.patch
 endif
 ifdef USE_LIBAV
 	$(APPLY) $(SRC)/ffmpeg/libav_gsm.patch
