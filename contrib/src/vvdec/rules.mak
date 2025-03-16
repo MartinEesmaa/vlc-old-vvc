@@ -23,7 +23,7 @@ vvdec: vvdec-$(VVDEC_VERSION).tar.gz .sum-vvdec
 	$(MOVE)
 
 .vvdec: vvdec toolchain.cmake
-	cd vvdec-$(VVDEC_VERSION) && rm -f CMakeCache.txt
-	cd vvdec-$(VVDEC_VERSION) && $(HOSTVARS) $(CMAKE)
-	cd vvdec-$(VVDEC_VERSION) && $(CMAKEBUILD) . --target install
+	cd $< && rm -f CMakeCache.txt
+	cd $< && $(HOSTVARS) $(CMAKE)
+	cd $< && $(CMAKEBUILD) . --target install
 	touch $@
