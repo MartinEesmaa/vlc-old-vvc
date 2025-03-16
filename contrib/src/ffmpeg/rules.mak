@@ -34,7 +34,6 @@ FFMPEGCONF = \
 	--disable-decoder=opus \
 	--enable-libgsm \
 	--enable-libvvdec \
-	--enable-libfdk-aac \
 	--disable-debug \
 	--disable-avdevice \
 	--disable-devices \
@@ -61,7 +60,7 @@ FFMPEGCONF += \
 endif
 endif
 
-DEPS_ffmpeg = zlib gsm
+DEPS_ffmpeg = zlib gsm vvdec
 
 ifndef USE_LIBAV
 FFMPEGCONF += \
