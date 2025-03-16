@@ -19,7 +19,7 @@ $(TARBALLS)/vvdec-$(VVDEC_VERSION).tar.gz:
 .sum-vvdec: $(TARBALLS)/vvdec-$(VVDEC_VERSION).tar.gz
 	touch $@
 
-vvdec: .sum-vvdec
+vvdec: vvdec-$(VVDEC_VERSION).tar.gz .sum-vvdec
 	$(UNPACK)
 	$(MOVE)
 
