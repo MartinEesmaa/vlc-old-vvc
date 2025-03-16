@@ -17,9 +17,7 @@ vvdec: vvdec-$(VVDEC_VERSION).tar.gz .sum-vvdec
 	$(UNPACK)
 	$(MOVE)
 
-DEPS_vvdec = ffmpeg $(DEPS_ffmpeg)
-
-.vvdec: vvdec .ffmpeg toolchain.cmake
+.vvdec: vvdec toolchain.cmake
 	cd $< && rm -f CMakeCache.txt
 	cd $< && $(HOSTVARS) $(CMAKE)
 	cd $< && $(CMAKEBUILD) . --target install
