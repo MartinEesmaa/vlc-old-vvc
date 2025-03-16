@@ -2689,9 +2689,7 @@ AS_IF([test "${enable_vpx}" != "no"],[
 dnl
 dnl libvvdec decoder plugin
 dnl
-PKG_CHECK_MODULES([VVDEC], [vvdec >= 1.1.0], [], [
-  AC_MSG_ERROR([libvvdec 1.1.0 or higher was not found])
-])
+PKG_ENABLE_MODULES_VLC([VVDEC], [], [vvdec], [external VVC decoder (default auto)])
 
 dnl
 dnl twolame encoder plugin
