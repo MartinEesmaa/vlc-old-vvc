@@ -13,7 +13,9 @@ endif
 $(TARBALLS)/vvdec-$(VVDEC_VERSION).zip:
     $(call download_pkg,$(VVDEC_URL),vvdec)
 
-.sum-vvdec: vvdec-$(VVDEC_VERSION).zip
+.sum-vvdec: $(TARBALLS)/vvdec-$(VVDEC_VERSION).zip
+    echo "$(VVDEC_SHA512) $<" | sha512sum --check -
+    touch $@
 
 vvdec: vvdec-$(VVDEC_VERSION).zip .sum-vvdec
     $(UNPACK)
