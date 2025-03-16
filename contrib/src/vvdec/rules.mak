@@ -14,10 +14,9 @@ PKGS_FOUND += vvdec
 endif
 
 $(TARBALLS)/vvdec-$(VVDEC_VERSION).tar.gz:
-	$(call download_pkg,$(VVDEC_URL),vvdec)
+	$(call download,$(VVDEC_URL))
 
 .sum-vvdec: $(TARBALLS)/vvdec-$(VVDEC_VERSION).tar.gz
-	touch $@
 
 vvdec: vvdec-$(VVDEC_VERSION).tar.gz .sum-vvdec
 	$(UNPACK)
