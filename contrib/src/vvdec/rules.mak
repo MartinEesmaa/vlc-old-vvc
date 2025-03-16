@@ -1,7 +1,7 @@
 # VVdeC Library
 
 VVDEC_VERSION := 3.0.0
-VVDEC_URL := $(GITHUB)/fraunhoferhhi/vvdec/archive/v$(VVDEC_VERSION).zip
+VVDEC_URL := $(GITHUB)/fraunhoferhhi/vvdec/archive/v$(VVDEC_VERSION).tar.gz
 
 ifdef GPL
 ifdef GNUV3
@@ -12,10 +12,10 @@ ifeq ($(call need_pkg,"vvdec"),)
 PKGS_FOUND += vvdec
 endif
 
-$(TARBALLS)/vvdec-$(VVDEC_VERSION).zip:
+$(TARBALLS)/vvdec-$(VVDEC_VERSION).tar.gz:
     $(call download_pkg,$(VVDEC_URL),vvdec)
 
-.sum-vvdec: $(TARBALLS)/vvdec-$(VVDEC_VERSION).zip
+.sum-vvdec: $(TARBALLS)/vvdec-$(VVDEC_VERSION).tar.gz
 
 vvdec: vvdec-$(VVDEC_VERSION).zip .sum-vvdec
     $(UNPACK)
