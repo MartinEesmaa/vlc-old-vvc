@@ -19,6 +19,6 @@ vvdec: vvdec-$(VVDEC_VERSION).tar.gz .sum-vvdec
 
 .vvdec: vvdec toolchain.cmake
 	cd $< && rm -f CMakeCache.txt
-	cd $< && $(HOSTVARS) $(CMAKE)
+	cd $< && $(HOSTVARS) $(CMAKE) -DVVDEC_ENABLE_LINK_TIME_OPT=OFF
 	cd $< && $(CMAKEBUILD) . --target install
 	touch $@
